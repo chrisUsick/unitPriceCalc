@@ -55,6 +55,7 @@ Android/gen/
 Android/assets/
 android/bin/
 android/gen/
+android/ant-build/
 platforms/android/assets/
 
 # generated files

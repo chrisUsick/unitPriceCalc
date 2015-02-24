@@ -1,14 +1,14 @@
 <div class="form-group">
 	<label class="col-xs-2">Price {{data.id}}:</label>
 	<div class="col-xs-10 ">
-		<input type="number" ng-model="data.price" >	
+		<input type="number" step="0.001" ng-model="data.price" >	
 	</div>
 </div>
 
 <div class="form-group">
 	<label class="col-xs-2">Quantity {{data.id}}:</label>
 	<div class="quantity col-xs-8">
-		<input type="number" ng-model="data.quantity">	
+		<input type="number" step="0.001" ng-model="data.quantity">	
 		<input ng-show="units" class="units" placeholder="units" type="text" ng-model="data.unit">
 	</div>
 	
