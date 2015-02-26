@@ -1,15 +1,27 @@
-<form ng-submit="calculate()" class="form-horizontal">
+<form name="form" ng-submit="calculate()" class="form-horizontal">
   <div class="form-group">
     <label>Use Units</label>
     <input type='checkbox' ng-model="shared.useUnits" tabindex="-100" />
   </div>
+
+  <div class="form-group" ng-show="shared.useUnits" 
+    ng-class="{'has-error':form.defaultUnits.$invalid}">
+    <label class="control-label col-xs-2">Default Units</label>
+    <div class="col-xs-10">
+
+      <input class="form-control" name="defaultUnits" type="text" ng-model="shared.defaultUnits" unit-validator />
+
+    </div>
+    <span ng-show="form.defaultUnits.$error.unitValidator">Invalid Units</span>
+  </div>
+
   <div ng-repeat="price in prices">
-    <unit-price-calc data="price" units="shared.useUnits"></unit-price-calc>
+    <unit-price-calc data="price" default-units="shared.defaultUnits" units="shared.useUnits"></unit-price-calc>
   </div>
 
   <div class="row">
     <div class="col-xs-offset-2">
-      <button type='button' class="btn btn-default" ng-click="prices.push({id:(prices.length + 1)})">
+      <button type='button' class="btn btn-default" ng-click="addUnitPrice()">
         <span class="glyphicon glyphicon-plus"></span>
       </button>
       <button type="submit" class="btn btn-primary">Calculate</button>

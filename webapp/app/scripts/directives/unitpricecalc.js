@@ -7,38 +7,37 @@
  * # unitPriceCalc
  */
 angular.module('webappApp')
-  .directive('unitPriceCalc', function () {
+  .directive('unitPriceCalc', ['UnitPrice', '$rootScope', function (UnitPrice, $rootScope) {
     return {
       templateUrl: 'views/directives/unit-price-calc.html',
       restrict: 'E',
       scope:{
       	data:'=',
-      	units:'='
+      	units:'=',
+        defaultUnits:'='
       },
       link: function postLink(scope, element, attrs) {
-      	function calcPrice (){
-      		scope.data.unitPrice = scope.data.price / scope.data.quantity;
-      	}
-      	scope.data.calcPrice = calcPrice;
-      	/*scope.$watch('data.quantity', function (newVal){
-      		if (newVal){
-						// split on spaces
-	      		var pieces = newVal.trim().split(' ');
-
-	      		var num = parseFloat(pieces[0]);
-	      		scope.data.qtyNum = num;
-
-	      		// join using the same method used to split
-	      		scope.data.unit = pieces.splice(1).join(' ');
-	      		calcPrice();
-      		}
-      		calcPrice()
-      		
-      	});*/
-
+      	
       	/*scope.$watch('data.price', function (newVal){
       		calcPrice();
       	})*/
+
+        // watch the individual units value to set default units
+        // if it isn't already set
+        scope.$watch('data.units', function (newVal){
+          if (!scope.data.defaultUnits) {
+            scope.data.defaultUnits = newVal;
+            scope.defaultUnits = newVal;
+          }
+          // console.log(scope.data);
+        });
+
+        // watch defaultUnits to propagate changes to unitPrice objects
+        scope.$watch('defaultUnits', function(newVal){
+          scope.data.defaultUnits = newVal;
+          // revalidate units
+          $rootScope.$broadcast('unitRevalidate');
+        });
       }
     };
-  });
+  }]);

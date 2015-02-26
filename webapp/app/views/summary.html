@@ -5,7 +5,7 @@
 		</td>
 		<td data-title="'Unit Price'" sortable="'unitPrice'">
 			{{price.unitPrice|currency}} 
-			<span ng-show="shared.useUnits"> {{(price.unit) ? 'per' : ''}} {{price.unit}}
+			<span ng-show="shared.useUnits"> {{(price.units) ? 'per' : ''}} {{price.defaultUnits}}
 			</span>
 		</td>
 	</tr>
