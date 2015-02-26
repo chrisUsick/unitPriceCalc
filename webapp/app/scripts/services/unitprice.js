@@ -27,7 +27,7 @@ angular.module('webappApp')
         // do complex calculation
         var qDefault = Qty(this.defaultUnits);
         // convert quantity to default units
-        var newQty = Qty(this.units).mul(this.quantity).to(qDefault.units());
+        var newQty = Qty((this.units || qDefault.units())).mul(this.quantity).to(qDefault.units());
 
         this.unitPrice = this.price / newQty.scalar;
 
