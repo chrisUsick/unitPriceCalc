@@ -36,4 +36,6 @@ angular.module('webappApp')
     	});
     	$location.path('/summary');
     };
+
+    console.log($scope.form);
   });

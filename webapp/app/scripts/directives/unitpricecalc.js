@@ -14,9 +14,11 @@ angular.module('webappApp')
       scope:{
       	data:'=',
       	units:'=',
-        defaultUnits:'='
+        defaultUnits:'=',
+        form:'='
       },
-      link: function postLink(scope, element, attrs) {
+      tranclude:true,
+      link: function postLink(scope, element, attrs, ctrl) {
       	
       	/*scope.$watch('data.price', function (newVal){
       		calcPrice();
@@ -28,6 +30,9 @@ angular.module('webappApp')
           if (!scope.data.defaultUnits) {
             scope.data.defaultUnits = newVal;
             scope.defaultUnits = newVal;
+
+            // ctrl.$validate();
+            console.log('from unitpricCalc', ctrl);
           }
           // console.log(scope.data);
         });

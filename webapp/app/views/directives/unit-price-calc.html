@@ -1,15 +1,37 @@
 <div class="form-group">
-	<label class="col-xs-2">Price {{data.id}}:</label>
-	<div class="col-xs-10 ">
-		<input type="number" step="0.01" ng-model="data.price" >	
+	<label class="col-sm-2 control-label">Price {{data.id}}:</label>
+	<div class="col-sm-10 ">
+		<input class="form-control" type="number" step="0.01" ng-model="data.price" >	
 	</div>
 </div>
 
-<div class="form-group">
-	<label class="col-xs-2">Quantity {{data.id}}:</label>
-	<div class="quantity col-xs-8">
-		<input type="number" step="0.001" ng-model="data.quantity">	
-		<input ng-show="units" class="units" unit-validator="{{defaultUnits}}" placeholder="units" type="text" ng-model="data.units">
+
+<ng-form name="unitsForm">
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Quantity {{data.id}}:</label>
+		<div
+				ng-class="{'col-xs-9':units,
+									 'col-sm-7':units,
+										'col-xs-12':!units,
+										'col-sm-10':!units,
+										}">
+			<input class="form-control" type="number" step="0.001" ng-model="data.quantity" >	
+
+
+			
+		</div>
+		<div class="col-xs-3 " ng-show="units"
+					ng-class="{'has-error':unitsForm.units.$invalid}">
+			<input class="form-control" class="units" unit-validator="{{defaultUnits}}" placeholder="units" type="text" ng-model="data.units" name="units">
+			
+		</div>
+		<!-- this error is for the units input, but it looks better to have it in this column -->
+		<div  class="col-sm-12 text-right"
+					ng-class="{'has-error':unitsForm.units.$invalid}">
+			<span class="help-block has-error" ng-show="unitsForm.units.$error.unitValidator">Invalid unit or incompatible with default units.</span>
+		</div>
+		
 	</div>
-	
-</div>
+</ng-form>
+ <!-- {{form['quantity' + data.id]|json}} -->
+ <!-- {{|json}} -->

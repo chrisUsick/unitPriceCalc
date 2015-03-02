@@ -15,13 +15,15 @@ body {
 /* Custom page header */
 .header {
   border-bottom: 1px solid #e5e5e5;
+  height: 64px;
 }
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
   margin-top: 0;
   margin-bottom: 0;
   line-height: 40px;
-  padding-bottom: 19px;
+  /*padding-bottom: 19px;*/
+
 }
 
 /* Custom page footer */
@@ -72,7 +74,7 @@ input.units {
 }
 
 .quantity .units {
-  width: 25%;
+  /*width: 25%;*/
 }
 
 
@@ -103,4 +105,15 @@ input.units {
   .jumbotron {
     border-bottom: 0;
   }
+}
+
+.vcenter {
+  display: flex;
+  align-items: center;
+  /*justify-content: center;*/
+  flex-direction: row; 
+}
+
+.label-left {
+  text-align: left !important;
 }

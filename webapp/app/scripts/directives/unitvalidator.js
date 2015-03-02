@@ -37,7 +37,7 @@ angular.module('webappApp')
       				success = false;
       			}
       		}
-
+          console.log('is valid', success);
       		return success;
       	};
       }
