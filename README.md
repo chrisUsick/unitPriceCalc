@@ -1,4 +1,5 @@
 # unitPriceCalc
+see mobile app on [Google Play](https://play.google.com/store/apps/details?id=com.cuDev.unitPrice]).  
 calculate and compare unit prices on the go
 
 # Features
