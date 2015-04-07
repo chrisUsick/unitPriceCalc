@@ -19,6 +19,8 @@
   "smarttabs": true,
   "globals": {
     "angular": false,
-    "Qty": true
+    "Qty": true,
+    "introJs":true,
+    "$":true
   }
 }

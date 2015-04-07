@@ -1,9 +1,16 @@
+
 <form name="form" ng-submit="calculate()" class="form-horizontal">
   <div class="form-group">
-    <label class="control-label col-sm-10 col-sm-offset-2 label-left">
+    <label class="control-label col-sm-9 col-sm-offset-2 label-left">
       <input type='checkbox' ng-model="shared.useUnits" tabindex="-100" />
       Use Units
     </label>
+    <div class="control-label pull-right col-sm-1 ">
+<!--       <button class="btn btn-default" type="button">
+      </button> -->
+
+      <span class="glyphicon glyphicon-question-sign text-large" ng-click="startHelp()"></span>
+    </div>
   </div>
 
   <div class="form-group" ng-show="shared.useUnits" 
@@ -22,7 +29,7 @@
   </div>
 
   <div class="col-sm-offset-2">
-      <button type='button' class="btn btn-default" ng-click="addUnitPrice()">
+      <button type='button' class="btn btn-default" ng-click="addUnitPrice()" id="add">
         <span class="glyphicon glyphicon-plus"></span>
       </button>
       <button type="submit" class="btn btn-primary">Calculate</button>

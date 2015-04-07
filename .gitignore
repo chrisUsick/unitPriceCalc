@@ -27,6 +27,8 @@ node_modules
 # Users Environment Variables
 .lock-wscript
 
+# www is just build dir
+www
 # =========================
 # Operating System Files
 # =========================

@@ -27,21 +27,20 @@ angular.module('webappApp')
         // watch the individual units value to set default units
         // if it isn't already set
         scope.$watch('data.units', function (newVal){
-          if (!scope.data.defaultUnits) {
+          if (!scope.defaultUnits) {
             scope.data.defaultUnits = newVal;
             scope.defaultUnits = newVal;
-
-            // ctrl.$validate();
-            console.log('from unitpricCalc', ctrl);
           }
-          // console.log(scope.data);
         });
 
         // watch defaultUnits to propagate changes to unitPrice objects
         scope.$watch('defaultUnits', function(newVal){
-          scope.data.defaultUnits = newVal;
-          // revalidate units
-          $rootScope.$broadcast('unitRevalidate');
+         if (!scope.data.defaultUnits ) {
+           scope.data.defaultUnits = newVal;
+           // revalidate units
+           $rootScope.$broadcast('unitRevalidate');
+         }
+          
         });
       }
     };

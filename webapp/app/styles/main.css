@@ -108,12 +108,31 @@ input.units {
 }
 
 .vcenter {
+  display: -webkit-flex;
   display: flex;
+  -webkit-align-items: center;
   align-items: center;
   /*justify-content: center;*/
+  -webkit-flex-direction: row;
   flex-direction: row; 
 }
 
 .label-left {
   text-align: left !important;
+}
+
+.text-large {
+  font-size: x-large;
+}
+
+.introjs-overlay {
+  background: rgba(0, 0, 0,0.8);
+}
+
+.introjs-helperLayer {
+  background-color: rgba(255,255,255, 0.5);
+}
+
+.introjs-tooltip {
+  z-index: 10001000;
 }

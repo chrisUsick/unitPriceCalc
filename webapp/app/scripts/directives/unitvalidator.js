@@ -23,9 +23,10 @@ angular.module('webappApp')
       		try {
       			if (modelVal.length !== 0) {
 	      			var qty = new Qty(modelVal);
+	      	  // if there is a defaultUnits value in the validator attribute
+	      	  // ensure compatibility with it
               if (attrs.unitValidator && attrs.unitValidator !== ''){
                 success = qty.isCompatible(Qty(attrs.unitValidator));
-                console.log('isCompatible', success);
               } else {
                 success = true;
               }
@@ -37,7 +38,6 @@ angular.module('webappApp')
       				success = false;
       			}
       		}
-          console.log('is valid', success);
       		return success;
       	};
       }

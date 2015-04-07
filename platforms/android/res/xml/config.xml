@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.cuDev.unitPrice" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.cuDev.unitPrice" version="0.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <preference name="loglevel" value="DEBUG" />
     <feature name="WebViewDebug">
         <param name="android-package" value="com.jamiestarke.webviewdebug.WebViewDebug" />
@@ -7,10 +7,10 @@
     </feature>
     <name>UnitPriceCalc</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+    	Unit Price Calculator lets you calculate and compare multiple unit prices.
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="christopher.usick@gmail.com" href="http://cu-dev.ca">
+        Christopher Usick
     </author>
     <content src="index.html" />
     <access origin="*" />

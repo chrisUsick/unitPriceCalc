@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.cuDev.unitPrice" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.cuDev.unitPrice" version="0.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>UnitPriceCalc</name>
     <description>
-    	Unit Price Calculator lets you calculate and compare multipe unit prices.
+    	Unit Price Calculator lets you calculate and compare multiple unit prices.
     </description>
     <author email="christopher.usick@gmail.com" href="http://cu-dev.ca">
         Christopher Usick

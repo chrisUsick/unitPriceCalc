@@ -1,4 +1,4 @@
-<table ng-table="tableParams" class="table"> <tr ng-repeat="price in $data"> <td data-title="'#'" sortable> {{price.id}}  <td data-title="'Unit Price'" sortable> {{price.unitPrice|currency}} <span ng-show="shared.useUnits"> {{(price.unit) ? 'per' : ''}} {{price.unit}} </span>   </table> <button class="btn btn-default" ng-click="back(true)">Edit data</button> <button class="btn btn-default" ng-click="back(false)">Back</button> <!-- <pre>
+<table ng-table="tableParams" class="table"> <tr ng-repeat="price in $data"> <td data-title="'#'" sortable> {{price.id}}  <td data-title="'Unit Price'" sortable> {{price.unitPrice|currency}} <span ng-show="shared.useUnits"> {{(price.units) ? 'per' : ''}} {{price.defaultUnits}} </span>   </table> <button class="btn btn-default" ng-click="back(true)">Edit data</button> <button class="btn btn-default" ng-click="back(false)">Back</button> <!-- <pre>
 	{{shared.useUnits|json}}
 	{{tableParams.$data | json}}
 	{{tableParams.sorting()|json}}
